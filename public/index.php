@@ -1,5 +1,7 @@
 <?php
 
+use Joao21dev\Magazord\Controller\ExclusaoContato;
+use Joao21dev\Magazord\Controller\ExclusaoPessoa;
 use Joao21dev\Magazord\Controller\FormularioInsercaoContato;
 use Joao21dev\Magazord\Controller\FormularioInsercaoPessoa;
 use Joao21dev\Magazord\Controller\Home;
@@ -22,6 +24,11 @@ switch (@$_SERVER['PATH_INFO']) {
         $controlador->processaRequisicao();
         break;
 
+    case '/excluir-pessoa':
+        $controlador = new ExclusaoPessoa();
+        $controlador->processaRequisicao();
+        break;
+
     case '/listar-contatos':
         $controlador = new ListarContatos();
         $controlador->processaRequisicao();
@@ -29,6 +36,11 @@ switch (@$_SERVER['PATH_INFO']) {
 
     case '/cadastrar-contato':
         $controlador = new FormularioInsercaoContato();
+        $controlador->processaRequisicao();
+        break;
+
+    case '/excluir-contato':
+        $controlador = new ExclusaoContato();
         $controlador->processaRequisicao();
         break;
 
