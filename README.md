@@ -65,9 +65,13 @@ Certifique-se de seguir as instruções de instalação apropriadas para o seu s
    ```sh
    git clone git@github.com:joao21dev/magazord.git
    ```
+2. Entre no repositório
+   ```sh
+   cd magazord
+   ```
 2. Rode o container docker com o banco de dados (porta padrão 5432)
    ```js
-   sudo docker compose up --build
+   docker compose up --build
    ```
 3. Abra outra janela do terminal no mesmo diretório e acesse a pasta Infra para criar as tabelas
    ```sh
@@ -77,8 +81,6 @@ Certifique-se de seguir as instruções de instalação apropriadas para o seu s
    ```js
    docker exec -i postgres psql -U admin -d postgres < ddl.sql
    ```
-5. Instale as dependências do projeto
-   ```js
-   composer install
-   ```
+
+5. Acesse o projeto no endereço localhost:8000
 
