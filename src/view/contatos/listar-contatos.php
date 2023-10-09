@@ -2,7 +2,6 @@
 
 <h1> Lista de Contatos </h1>
 
-<a href="/cadastrar-contato" class="btn btn-success mb-3">Cadastrar Contato</a>
 
 <form action="/listar-contatos" method="GET" class="mb-3">
     <div class="input-group">
