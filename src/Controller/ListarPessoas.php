@@ -23,14 +23,12 @@ class ListarPessoas implements InterfaceControladoraRequisicao
         $cpf = preg_replace("/[^0-9]/", "", $cpf);
 
         if (!empty($cpf)) {
-            // Se o CPF foi fornecido na consulta, filtre as pessoas por CPF usando LIKE
             $pessoas = $this->repositorioDePessoas->createQueryBuilder('p')
                 ->where('p.cpf LIKE :cpf')
                 ->setParameter('cpf', $cpf . '%')
                 ->getQuery()
                 ->getResult();
         } else {
-            // Caso contrário, liste todas as pessoas
             $pessoas = $this->repositorioDePessoas->findAll();
         }
 

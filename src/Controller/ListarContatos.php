@@ -27,7 +27,6 @@ class ListarContatos implements InterfaceControladoraRequisicao
         $nomeDaPessoa = filter_input(INPUT_GET, 'nome_da_pessoa', FILTER_SANITIZE_STRING);
 
         if (!empty($nomeDaPessoa)) {
-            // Use o operador LIKE para buscar pessoas cujo nome contenha a substring pesquisada
             $pessoas = $this->repositorioDePessoas->createQueryBuilder('p')
                 ->where('LOWER(p.nome) LIKE :nome')
                 ->setParameter('nome', '%' . strtolower($nomeDaPessoa) . '%')
@@ -35,18 +34,15 @@ class ListarContatos implements InterfaceControladoraRequisicao
                 ->getResult();
 
             if (!empty($pessoas)) {
-                // Se pelo menos uma pessoa foi encontrada, busque os contatos associados a essas pessoas
                 $contatos = $this->repositorioDeContatos->createQueryBuilder('c')
                     ->where('c.pessoa IN (:pessoas)')
                     ->setParameter('pessoas', $pessoas)
                     ->getQuery()
                     ->getResult();
             } else {
-                // Caso contrário, não há contatos para mostrar
                 $contatos = [];
             }
         } else {
-            // Caso contrário, liste todos os contatos
             $contatos = $this->repositorioDeContatos->findAll();
         }
 
