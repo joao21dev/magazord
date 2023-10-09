@@ -1,0 +1,12 @@
+CREATE TABLE IF NOT EXISTS pessoa (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(255) NOT NULL,
+    cpf VARCHAR(11) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS contato (
+    id SERIAL PRIMARY KEY,
+    tipo VARCHAR(255) NOT NULL,
+    descricao TEXT NOT NULL,
+    id_pessoa INT REFERENCES pessoa(id)
+);
