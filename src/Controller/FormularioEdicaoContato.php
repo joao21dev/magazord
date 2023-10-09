@@ -38,6 +38,6 @@ class FormularioEdicaoContato implements InterfaceControladoraRequisicao
         $titulo = "Editar Contato de " . $contato->getPessoa()->getNome() . ' com descrição ' . $contato->getDescricao();
         $idPessoa = $contato->getPessoa()->getId();
 
-        require __DIR__ . '/../../view/contatosk/cadastrar-contato.php';
+        require __DIR__ . '/../view/contatos/cadastrar-contato.php';
     }
 }

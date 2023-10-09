@@ -45,8 +45,10 @@ class PersistenciaPessoa implements InterfaceControladoraRequisicao
 
                 $this->entityManager->persist($pessoa);
             } else {
-                session_start();
-                $_SESSION['errorMsg'] = "Já existe uma pessoa com o CPF: $cpf";
+
+                echo "Já existe uma pessoa com o CPF: $cpf";
+                sleep(4);
+                echo '<script>window.location = "listar-pessoas";</script>';
             }
         }
 

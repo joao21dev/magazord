@@ -36,6 +36,6 @@ class FormularioEdicaoPessoa implements InterfaceControladoraRequisicao
 
         $pessoa = $this->repositorioPessoas->find($id);
         $titulo = "Editar Pessoa " . $pessoa->getNome();
-        require __DIR__ . '/../../view/pessoas/cadastrar-pessoa.php';
+        require __DIR__ . '/../view/pessoas/cadastrar-pessoa.php';
     }
 }

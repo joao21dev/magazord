@@ -13,14 +13,7 @@
     </div>
 
 
-    <?php
-    session_start();
-    if (!empty($_SESSION['errorMsgId'])) {
-        $errorMsgId = $_SESSION['errorMsgId'];
-        unset($_SESSION['errorMsgId']);
-        echo '<div class="alert alert-danger" role="alert">' . $errorMsgId . '</div>';
-    }
-    ?>
+
 
     <div class="mb-3">
         <label for="tipo" class="form-label">Tipo</label>
@@ -66,14 +59,6 @@
 
 
 
-    <?php
-    session_start();
-    if (!empty($_SESSION['errorMsgDescricao'])) {
-        $errorMsgDescricao = $_SESSION['errorMsgDescricao'];
-        unset($_SESSION['errorMsgDescricao']);
-        echo '<div class="alert alert-danger" role="alert">' . $errorMsgDescricao . '</div>';
-    }
-    ?>
 
     <div class="mb-3">
         <button type="submit" class="btn btn-primary" id="btnSalvar">Salvar</button>

@@ -47,10 +47,9 @@ class PersistenciaContato implements InterfaceControladoraRequisicao
             $pessoa = $pessoaRepository->find($idPessoa);
 
             if ($pessoa === null) {
-                session_start();
-                $_SESSION['errorMsgId'] = "Não existe uma Pessoa com o ID fornecido: $idPessoa";
-
-                header('Location: /cadastrar-contato', false, 302);
+                echo "Não existe uma Pessoa com o ID fornecido: $idPessoa";
+                sleep(4);
+                echo '<script>window.location = "listar-contatos";</script>';
             } elseif ($existingContato === null) {
                 $contato = new Contato;
                 $contato->setTipo($tipo);
@@ -59,10 +58,9 @@ class PersistenciaContato implements InterfaceControladoraRequisicao
 
                 $this->entityManager->persist($contato);
             } else {
-                session_start();
-                $_SESSION['errorMsgDescricao'] = "Já existe um contato criado com essa descrição: $descricao";
-
-                header('Location: /cadastrar-contato', false, 302);
+                echo "Já existe um contato criado com essa descrição: $descricao";
+                sleep(4);
+                echo '<script>window.location = "listar-contatos";</script>';
             }
         }
 
