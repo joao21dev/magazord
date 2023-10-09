@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
         'name' => 'joao21dev/magazord',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-develop',
+        'version' => 'dev-develop',
+        'reference' => '04c368b780b1230ca79e672aecbaa701767f821e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'doctrine/annotations' => array(
+            'pretty_version' => '1.14.0',
+            'version' => '1.14.0.0',
+            'reference' => '3587ab58646bc515b2e03bbd3cfcd3682e8df5bf',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../doctrine/annotations',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'doctrine/cache' => array(
             'pretty_version' => '2.2.0',
             'version' => '2.2.0.0',
@@ -110,9 +119,9 @@
             'dev_requirement' => false,
         ),
         'joao21dev/magazord' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-develop',
+            'version' => 'dev-develop',
+            'reference' => '04c368b780b1230ca79e672aecbaa701767f821e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

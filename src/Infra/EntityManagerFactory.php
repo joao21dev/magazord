@@ -19,16 +19,17 @@ class EntityManagerFactory
             [
                 $rootDir . '/src'
             ],
-            true
+            true 
         );
         $connection = [
             'driver' => 'pdo_pgsql',
-            'host' => 'postgres',
+            'host' => 'postgres', 
             'port' => 5432,
             'dbname' => 'postgres',
             'user' => 'admin',
             'password' => 'admin',
         ];
+
 
         return EntityManager::create($connection, $config);
     }
