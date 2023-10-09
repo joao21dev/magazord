@@ -25,7 +25,6 @@ class PersistenciaPessoa implements InterfaceControladoraRequisicao
 
         $cpf = preg_replace("/[^0-9]/", "", $cpf);
 
-      
         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
 
         if (!is_null($id) && $id !== false) {
@@ -46,8 +45,10 @@ class PersistenciaPessoa implements InterfaceControladoraRequisicao
 
                 $this->entityManager->persist($pessoa);
             } else {
-                session_start();
-                $_SESSION['errorMsg'] = "Já existe uma pessoa com o CPF: $cpf";
+
+                echo "Já existe uma pessoa com o CPF: $cpf";
+                sleep(4);
+                echo '<script>window.location = "listar-pessoas";</script>';
             }
         }
 

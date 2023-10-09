@@ -13,14 +13,7 @@
     </div>
 
 
-    <?php
-    session_start();
-    if (!empty($_SESSION['errorMsgId'])) {
-        $errorMsgId = $_SESSION['errorMsgId'];
-        unset($_SESSION['errorMsgId']);
-        echo '<div class="alert alert-danger" role="alert">' . $errorMsgId . '</div>';
-    }
-    ?>
+
 
     <div class="mb-3">
         <label for="tipo" class="form-label">Tipo</label>
@@ -36,15 +29,13 @@
             const descricaoInput = document.getElementById("descricao");
 
             tipoSelect.addEventListener("change", function() {
-                // Limpe o valor e o formato quando o tipo é alterado
                 descricaoInput.value = "";
                 descricaoInput.placeholder = "";
             });
 
             descricaoInput.addEventListener("input", function() {
                 if (tipoSelect.value === "Telefone") {
-                    // Se "Telefone" for selecionado, aplique a formatação de telefone
-                    const value = descricaoInput.value.replace(/\D/g, ""); // Remova todos os caracteres não numéricos
+                    const value = descricaoInput.value.replace(/\D/g, "");
                     if (value.length === 11) {
                         descricaoInput.value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
                     } else if (value.length >= 2) {
@@ -68,14 +59,6 @@
 
 
 
-    <?php
-    session_start();
-    if (!empty($_SESSION['errorMsgDescricao'])) {
-        $errorMsgDescricao = $_SESSION['errorMsgDescricao'];
-        unset($_SESSION['errorMsgDescricao']);
-        echo '<div class="alert alert-danger" role="alert">' . $errorMsgDescricao . '</div>';
-    }
-    ?>
 
     <div class="mb-3">
         <button type="submit" class="btn btn-primary" id="btnSalvar">Salvar</button>

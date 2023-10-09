@@ -1,5 +1,7 @@
 <?php include __DIR__ . '/../header-html.php'; ?>
 
+
+
 <h1> <?= $titulo ?> </h1>
 
 <form action="/salvar-pessoa<?= isset($pessoa) ? '?id=' . $pessoa->getId() : ""; ?>" method="POST">
@@ -39,14 +41,7 @@
 
 
 
-    <?php
-    session_start();
-    if (!empty($_SESSION['errorMsg'])) {
-        $errorMsg = $_SESSION['errorMsg'];
-        unset($_SESSION['errorMsg']);
-        echo '<div class="alert alert-danger" role="alert">' . $errorMsg . '</div>';
-    }
-    ?>
+
 
     <div class="mb-3">
         <button type="submit" class="btn btn-primary" id="btnSalvar">Salvar</button>

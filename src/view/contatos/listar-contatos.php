@@ -2,7 +2,6 @@
 
 <h1> Lista de Contatos </h1>
 
-<a href="/cadastrar-contato" class="btn btn-success mb-3">Cadastrar Contato</a>
 
 <form action="/listar-contatos" method="GET" class="mb-3">
     <div class="input-group">
@@ -46,14 +45,12 @@
 </div>
 
 <script>
-    // Selecione todas as células de descrição com o atributo 'data-tipo' definido como 'Telefone'
     const descricaoCells = document.querySelectorAll('.descricao-cell[data-tipo="Telefone"]');
 
     descricaoCells.forEach(function(cell) {
         const descricao = cell.textContent;
         const descricaoNumerica = descricao.replace(/\D/g, '');
 
-        // Verifique o comprimento da descrição e aplique a formatação apropriada
         if (descricaoNumerica.length === 11) {
             cell.textContent = `(${descricaoNumerica.slice(0, 2)}) ${descricaoNumerica.slice(2, 7)}-${descricaoNumerica.slice(7)}`;
         } else if (descricaoNumerica.length >= 2) {
